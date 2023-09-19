@@ -1,0 +1,185 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(240, 78%, 98%);
+    background-image: url(images/bg-bottom.svg), url(images/bg-top.svg);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat;
+}
+
+.box-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    text-align: center;
+    padding: 3.75rem 1.25rem;
+}
+
+.title{
+    font-size: 2rem;
+    color: hsl(233, 13%, 49%);
+}
+
+.switch{
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider{
+    position: absolute;
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 35px;
+}
+
+.slider:hover{
+    background: hsl(236, 72%, 79%);
+}
+
+.slider::before{
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border-radius: 50%;
+    bottom: 4px;
+    left: 4px;
+    transition: all .4s ease-in-out;
+}
+
+input:checked+.slider::before{
+    transform: translateX(26px);
+}
+
+.pricing{
+    color: hsl(234, 14%, 74%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+.pricing .switch{
+    margin: 0 1.2rem;
+}
+
+.main-pricing{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing-box{
+    background: #fff;
+    padding: 3.12rem 2.5rem;
+    border-radius: 12px;
+    align-self: center;
+}
+
+.price-title{
+    color: hsl(233, 13%, 49%);
+    font-size: 18px;
+    margin-bottom: 1.87rem;
+}
+
+.annually-price,
+.monthly-price{
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(232, 13%, 33%);
+}
+
+.monthly-price{
+    display: none;
+}
+
+.price{
+    font-size: 65px;
+    padding-left: 0.43rem;
+}
+
+ul{
+    padding: 2.18rem 0;
+}
+
+ul li{
+    color: hsl(233, 13%, 49%);
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+    padding: 1.1rem 0;
+}
+
+ul li:first-child{
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.learn-btn{
+    width: 100%;
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    border: 1px solid transparent;
+    padding: 1rem 0;
+    border-radius: 6px;
+    color: hsl(240, 78%, 98%);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.learn-btn:hover{
+    background: transparent;
+    color: hsl(237, 63%, 64%);
+    border-color: hsl(237, 63%, 64%);
+}
+
+.pricing-box.center-box{
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    padding: 5rem 2.5rem;
+    transform: scaleX(1.05);
+}
+
+.pricing-box.center-box p{
+    color: #fff;
+}
+
+.pricing-box.center-box ul li{
+    color: #fff;
+}
+
+.pricing-box.center-box .learn-btn{
+    background: hsl(240, 78%, 98%);
+    color: hsl(237, 63%, 64%);
+}
+
+.pricing-box.center-box .learn-btn:hover{
+    background: transparent;
+    color: hsl(240, 78%, 98%);
+    border-color: hsl(240, 78%, 98%);
+}
+
+@media only screen and (max-width:768px){
+    .main-pricing{
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .pricing-box.center-box{
+        transform: none;
+    }
+}
